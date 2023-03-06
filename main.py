@@ -22,3 +22,6 @@ info = {
     'Followers': follow[0],
     'Following': follow[1]
 }
+
+for i in info:
+    print(f'{i}: {info[i]}')
