@@ -12,6 +12,7 @@ profile_picture = soup.find('div', class_='position-relative d-inline-block col-
 status = soup.find('div', class_='p-note user-profile-bio mb-3 js-user-profile-bio f4').div.text
 follow = soup.find_all('span', class_='text-bold color-fg-default')
 follow = [i.text for i in follow]
+contributions = soup.find('h2', class_='f4 text-normal mb-2').text.strip().replace('contributions', '').replace('in the last year', '')
 
 
 info = {
@@ -20,7 +21,8 @@ info = {
     'Profile picture': profile_picture,
     'Status': status,
     'Followers': follow[0],
-    'Following': follow[1]
+    'Following': follow[1],
+    'Contributions in the last year': contributions
 }
 
 for i in info:
